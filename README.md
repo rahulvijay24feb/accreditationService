@@ -1,0 +1,2 @@
+# accreditationService
+Validates user accreditation
