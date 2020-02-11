@@ -12,6 +12,11 @@ import static com.yieldstreet.accreditation.common.AccreditationConstants.UPPERB
 @Component
 public class AccreditationUtil {
 
+  /**
+   * Calculates network from given documents.
+   * @param documents
+   * @return
+   */
   public static Integer calculateUserNetWorth(Document[] documents) {
     Random random = new Random();
     return random.nextInt(TEN) + UPPERBOUND;

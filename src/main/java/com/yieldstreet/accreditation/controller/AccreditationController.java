@@ -16,18 +16,21 @@ import static com.yieldstreet.accreditation.common.AccreditationConstants.SUCCES
 
 /** */
 @RestController
-public class AccreditationController extends AccreditationControllerBase{
+public class AccreditationController extends AccreditationControllerBase {
 
   private static final Logger log = Logger.getLogger("AccreditationController");
 
   @Autowired AccreditationService accreditationService;
 
   /**
+   * This controller endpoint validates the request and returns if the user is accredited
+   *
    * @param request
    * @return
    */
-  @RequestMapping(method = RequestMethod.POST, path="/user/accreditation")
-  public AccreditationResponse validateAccreditation(@Valid @RequestBody AccreditationRequest request) {
+  @RequestMapping(method = RequestMethod.POST, path = "/user/accreditation")
+  public AccreditationResponse validateAccreditation(
+      @Valid @RequestBody AccreditationRequest request) {
     return AccreditationResponse.builder()
         .accredited(accreditationService.isUserAccreditationComplete(request.getPayload()))
         .success(SUCCESS)
