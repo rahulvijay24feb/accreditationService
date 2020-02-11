@@ -1,2 +1,2 @@
 # accreditationService
-Validates user accreditation
+Validates user accreditation and return accredited true.
